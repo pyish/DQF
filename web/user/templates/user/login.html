@@ -1,0 +1,43 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>D.Q.F Registration Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+
+<body>
+  <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Login</h5>
+                <form class="form-signin" method="POST">
+                  <div class="form-label-group">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                  </div>
+                  <hr class="my-2">
+                  <button class="btn btn-lg btn-primary text-uppercase" type="submit">Log in</button>
+                  <hr class="my-3">
+                </form>
+                <div class="border-top pt-2">
+                  <small class="text-muted">Need an account? <a href="{% url 'signup' %}">Sign In</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</body>
+</html>
